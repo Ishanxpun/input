@@ -6,6 +6,8 @@ const git = () => {
 {/* to rename branch: */}
 - git branch -M rename
  -git push -u origin main
+-git push origin --delete oldbranch
+
 
 {/* *to create & switch new branch: */}
  -git checkout -b branchname
