@@ -1,3 +1,4 @@
+
 import React from 'react'
 
 const git = () => {
@@ -6,19 +7,27 @@ const git = () => {
 {/* to rename branch: */}
 - git branch -M rename
  -git push -u origin main
--git push origin --delete oldbranch
+-git push origin --delete oldbranch {/*remote ko branch delete garni*/}
 
+{/* * to create branch : */}
+ -git branch branchname
+		
+{/* to switch branch */}
+  -git checkout branch
+		or
+  -git switch branchname(modern way)
 
 {/* *to create & switch new branch: */}
  -git checkout -b branchname
 
-{/* * to create branch : */}
- -git checkout branchname
 
-{/* * to delete branch: */}
+{/* * to delete branch locally: */}
   -git branch -d branchname  (branch delete garna xa vani next branch ma gayera balla delete garni. tei branch ma basera tei branch del hunnna)
 
-		{/*git branch handa afule banako sab branch dekhinxa,sathile banayera fetch haneko branch herna all branch command use:git branch -a  */}
+{/*git branch handa afule banako sab branch dekhinxa,sathile banayera fetch haneko branch herna all branch command use:git branch -a  */}
+	
+{/* to push branch remotely : git push garda branch haru push hudaina*/}
+  -git push -u origin branchname
 
 {/* * merge branch: */}
            {/* way 1. */}
@@ -28,8 +37,18 @@ const git = () => {
            {/* way 2. */}
 		          pull req: -mero branch chai main sanga merge han vanera vanni request ani senior/owner accepts and remotely merge hunxa
 			                -GitHub ma merge vayo tara locally merge vaxaina vani pull command use garni
-			                -pull command is used fo fetch content from remote repo to local
+ 			                -pull command is used fo fetch content from remote repo to local
+                            {/* pull:fetch + merge */}
  			                -git pull origin main
+                            {/* or we can do fecth and merge indiviually */}
+                            {/* pull le direct remote bata fetch garera merge garxa but individual fech+headerlog+merge garda chai
+                            fetch le locally ma lyauxa tara no change and we see git log header to see changes if we like then add git merge */}
+                           -git fecth
+                           -git log HEAD..origin/main   # see what changed
+                           -git merge origin/main   # brings changes into your branch 
+                           {/* main branch ma xa vani tei mathi ko commad but feature branch ma xa vani git merge main garni ani mathi ko command i.e 1 line extra */}
+
+
 
 
 {/* *merge conflict:two branch ma eutai thauma chanes garayo vanigit unable to resolve so we manually solve. */}
