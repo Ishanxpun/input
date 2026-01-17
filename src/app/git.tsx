@@ -45,7 +45,7 @@ const git = () => {
 {/* How to check tracking */}
 		-git branch -vv
 
-
+{/*git pull origin feature-x     # pull latest changes from friend's branch  */}
 		
 {/* * merge branch: */}
            {/* way 1. */}
